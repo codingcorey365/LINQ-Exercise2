@@ -20,7 +20,7 @@
             gameList.Add("The Witcher 3: Wild Hunt");
             gameList.Add("World of Warcraft");
             gameList.Add("Doom");
-            gameList.Add("Half - Life 2");
+            gameList.Add("Half-Life 2");
             gameList.Add("Portal 2");
             gameList.Add("Dark Souls");
             gameList.Add("BioShock");
@@ -46,7 +46,14 @@
             gameList.Add("Divinity: Original Sin 2");
             gameList.Add("Hades");
             
-            //Order the list of games by the length of the game name.
+            //Order the list of games by the length of the game name, then by alphabetical order.
+            var sorted = gameList.OrderBy(n => n.Length).ThenBy(n => n);
+
+            //print out all items in the sorted list
+            foreach (var game in sorted)
+            {
+                Console.WriteLine($"{game}");
+            }
         }
     }
 }
